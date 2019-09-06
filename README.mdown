@@ -1,0 +1,105 @@
+BVAR-connect
+===
+
+---
+
+## Description
+
+This is a user-friendly Matlab GUI that implements a variational inference approach to a Bayesian multi-subject vector
+autoregressive (VAR) model for inference on effective brain connectivity based on resting-state functional
+MRI data. The modeling framework uses a Bayesian variable selection approach to allow for simultaneous
+inference on effective connectivity at both the subject- and group-level. It also flexibly allows the integration
+of multi-modal data, in particular structural DTI data, into the prior construction. The variational inference
+approach we develop allows scalability of the methods and results in the ability to estimate subject- and
+group-level brain connectivity networks over whole-brain parcellations of the data
+
+Methodology and detailed implementation of the variational method are described in the manuscripts below:
+
+> Chiang, S., Guindani, M., Yeh, H.J., Haneef, Z., Stern, J.M. and Vannucci, M. (2017). A Bayesian Vector Autoregressive Model for Multi-Subject Effective Connectivity Inference using Multi-Modal Neuroimaging Data. Human Brain Mapping, 38, 1311-1332.
+
+> Kook, J.H., Vaughn, K.A., DeMaster, D.M., Ewing-Cobbs, L., and Vannucci, M. (2019). BVAR-connect: A Variational Bayes Approach to Multi-Subject Vector Autoregressive Models for Inference on Brain Connectivity Networks. NeuroImage. Submitted. 
+
+
+## Content and Installation.
+
+The repository contains a BVAR_connect.mlappinstall file which can be installed on both Windows and OS machine. For proper installation, you will need to have MATLAB R2012b or a higher version.
+
+
+## Example
+
+Once you run BVAR-connect, you will be presented with three options.
+
+
+### Model Fitting
+
+This is used to fit the proposed BVAR model. The user is required to define the following set of inputs in a chronological manner.
+
+1. Output Directory:
+
+	* This is where your output from running the model will be stored. Once the model has run successfully, a **out.mat** file will be generated in your specified directory.
+
+2. fMRI Data: You need to load a '.mat' file containing variables named
+ 
+    * **X**: A T × R × N array storing the fMRI times series data with T time points, at R regions, for N subjects.
+    * **ROI_names**: A 1 × R cell object storing the ROI’s names, listed in the same order as stored in **X**.
+    * **L**: An integer defining the number of lags of the BVAR model.
+    * **G**: An iteger specifying the number of groups,
+    * **eta**: A 1 × N vector storing integer values ranging from 1 to G, indicating which group each subject belongs to.
+
+3. Structural Data: The user loads a .mat file containing
+	
+	* **DTI_vec**: A 1 x G cell array object, where each cell contains a (R^2 x L) x 1 vector storing structural data. If a .mat file is not loaded, the model will run without any structural prior information.
+
+4. ICAR Prior: The user loads a .mat file containing
+
+	* **S**: A LR2 ×LR2 symmetric binary matrix used for the ICAR prior.
+
+5. Prior Setting: 
+
+	* The user is prompted to input the model hyperparameters from a window, which comes with pre-defined default settings. Depending on whether the user has specified a structural data or not from step 3, the specification for the model selection variable gamma will slightly change.
+
+
+Once the model has been fully defined, the user can initiate the inference by pressing on the **Run Model** button. If the user desires to run the model later with the same model specification, one can save the current setting using the **Save Inputs Setting** button, and later load it using the **Load Inputs Setting** prior to running the analysis.
+
+### Export Data to CSV
+
+While this GUI provides methods of visualizing the **out.mat** output from running the model, it also provides the option of exporting the set of effective connectivities selected from the model into an Excel CSV file. This way, the output can be visualized using one's preferred method or software. To use this feature, the user will need to have the **out.mat** file obtained from the model fitting procedure.
+
+### Connectograms
+
+Disclaimer : The visualization features provided in the GUI is built upon the Matlab circularGraph package of Paul Kassebaum (Copyright (c) 2016, The MathWorks, Inc. All rights reserved), which can be found on (https://github.com/paul-kassebaum-mathworks/circularGraph/). 
+
+For visualization of the **out.mat** file, we provide two options:
+
+1. ROI based connectogram: This is a feature used to visualize effective connectivities among different ROI's.
+
+2. User defined functional connectogram: As suggested by its name, in this option the user can combine ROI's to define functional networks (eg: DMN, Frontal Lobe, Subcortical Region...). This option allows the user to inspect connectivities among the functional groups.
+
+For both of the viewing options, the user will first need to load the **out.mat** obtained from model fitting. The visualization interface comprises the following to be specified:
+
+1. Define Connectogram: Given the G subject groups, the user defines the group to visualize. Connectivites can be filtered based on the remaining groups, as those shared by all groups, unique to a group, or any other possible combination. For each group, the user can select one of the four options.
+
+	* Active: This is the group that will be used to visualize effective connectivites. Only one of the G possible groups can be set to this option. Once a group has been chosen as **Active**, you can set the remaining groups to the settings below.
+
+	* Inclusive: If a group is set to this option, then the connectogram will visualize only the effective connectivies of the **Active** group that are also present in the **Inclusive** group.
+
+	* Exclusive: This is the opposite of **Inclusive**. The connectogram will visualize only the effective connectivies of the **Active** group that are not present in the **Inclusive** group.
+
+	* Ignore: Setting a group to this option will ignore the connectivities associated to this group when visualizing the **Active** group.
+
+2. ROI Order or Number Groups
+
+	* ROI Order: In case of the **ROI based connectogram** option, the user can manually define the ordering of the ROI's when visualized via the connectogram. The Default setting is set such that the ROI's are positioned in the same order as listed in the **ROI_names** variable in a circle going counterclockwise. One can change this default ordering by either manually inserting a vector using the **Input Vector** option or by inserting the ordering in a table using the **Insert From Table** option. For the last table option, the user can edit the values in "User Defined Order" column to define a new ordering.
+
+	* Number of Groups: For the **User defined functional connectogram** option, the user needs to define the number of functional groups, and its composition. Similarly to the **ROI based connectogram** case, the user can either input the ROI index for each functional group manually, or input them from a table.
+
+
+3. Connectivity: The user selects one of two possible options for plotting the connectograms. 
+
+	* Directionality: This is the default option, where edges are colored by the direction of the connectivity. For example, if there exists an effective connectivity from region A to region B, the edge connecting the two regions will take the color representing region A.
+    
+    * Sign: Edge color is based on the sign of the estimated connectivities, red forpositive values and blue for negative.
+
+4. Font Size: This defines the size of the font that will be used to display the name of the ROIs or functional networks.
+
+Once all of the inputs above have been defined, the user can press the **Plot Connectogram** button to view the connectogram.
