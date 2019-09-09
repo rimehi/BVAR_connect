@@ -1,5 +1,7 @@
 BVAR-connect
 ===
+![Main Interface](file:///C:/Users/ericj/Downloads/Software/figures/main_interface.PNG)
+![Example Connectogram](file:///C:/Users/ericj/Downloads/Software/BVAR_connect/visualization_3.PNG)
 
 ---
 
