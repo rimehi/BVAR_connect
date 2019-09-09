@@ -71,6 +71,7 @@ While this GUI provides methods of visualizing the **out.mat** output from runni
 
 Disclaimer : The visualization features provided in the GUI is built upon the Matlab circularGraph package of Paul Kassebaum (Copyright (c) 2016, The MathWorks, Inc. All rights reserved), which can be found on (https://github.com/paul-kassebaum-mathworks/circularGraph/). 
 
+Additionally, the visualization is only applicable to the case when L = 1.
 For visualization of the **out.mat** file, we provide two options:
 
 1. ROI based connectogram: This is a feature used to visualize effective connectivities among different ROI's.
