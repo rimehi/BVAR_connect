@@ -1,7 +1,7 @@
 BVAR-connect
 ===
-![Main Interface](https://github.com/rimehi/BVAR_connect/blob/master/main_interface.PNG)
-![Example Connectogram](https://github.com/rimehi/BVAR_connect/blob/master/connectogram_example.PNG)
+![Main Interface](https://github.com/rimehi/BVAR_connect/blob/master/main_interface.PNG){:height="36px" width="36px"}.
+![Example Connectogram](https://github.com/rimehi/BVAR_connect/blob/master/connectogram_example.PNG){:height="36px" width="36px"}.
 
 ---
 
