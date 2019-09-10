@@ -53,7 +53,7 @@ This is used to fit the proposed BVAR model. The user is required to define the 
 
 4. ICAR Prior: The user loads a .mat file containing
 
-	* **S**: A LR2 ×LR2 symmetric binary matrix used for the ICAR prior.
+	* **S**: A LR2 ×LR2 symmetric binary matrix used for the ICAR prior. If the .mat file containing **S** is not loaded by a user, a default **S** is made by the software. It is defined as a block diagonal matrix such that it encourages smoothness among connectivities at a same lag that initiate from the same ROI. 
 
 5. Prior Setting: 
 
