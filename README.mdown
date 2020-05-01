@@ -18,7 +18,7 @@ Methodology and detailed implementation of the variational method are described 
 
 > Chiang, S., Guindani, M., Yeh, H.J., Haneef, Z., Stern, J.M. and Vannucci, M. (2017). A Bayesian Vector Autoregressive Model for Multi-Subject Effective Connectivity Inference using Multi-Modal Neuroimaging Data. Human Brain Mapping, 38, 1311-1332.
 
-> Kook, J.H., Vaughn, K.A., DeMaster, D.M., Ewing-Cobbs, L., and Vannucci, M. (2020). BVAR-connect: A Variational Bayes Approach to Multi-Subject Vector Autoregressive Models for Inference on Brain Connectivity Networks. NeuroImage. Neuroinformatics, to appear. 
+> Kook, J.H., Vaughn, K.A., DeMaster, D.M., Ewing-Cobbs, L., and Vannucci, M. (2020). BVAR-connect: A Variational Bayes Approach to Multi-Subject Vector Autoregressive Models for Inference on Brain Connectivity Networks. Neuroinformatics, to appear. 
 
 
 ## Content and Installation.
