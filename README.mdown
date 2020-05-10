@@ -1,6 +1,6 @@
 BVAR-connect
 ===
-<img src="https://github.com/marinavannucci/BVAR_connect/blob/master/logo_BVAR.jpg" alt="BVAR logo" width="300" height="300"> 
+<img src="https://github.com/marinavannucci/BVAR_connect/blob/master/logo_BVAR.jpg" alt="BVAR logo" width="500" height="250"> 
 
 ---
 
