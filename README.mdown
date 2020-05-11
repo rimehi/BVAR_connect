@@ -1,6 +1,6 @@
 BVAR-connect
 ===
-<img src="https://github.com/rimehi/BVAR_connect/blob/master/main_interface.PNG" alt="Main Interface" width="300" height="300"> <img src="https://github.com/rimehi/BVAR_connect/blob/master/connectogram_example.PNG" alt="Example Connectogram" width="300" height="300">
+<img src="https://github.com/rimehi/BVAR_connect/blob/master/logo_BVAR.jpg" alt="BVAR Logo" width="500" height="300">
 
 ---
 
@@ -18,12 +18,12 @@ Methodology and detailed implementation of the variational method are described 
 
 > Chiang, S., Guindani, M., Yeh, H.J., Haneef, Z., Stern, J.M. and Vannucci, M. (2017). A Bayesian Vector Autoregressive Model for Multi-Subject Effective Connectivity Inference using Multi-Modal Neuroimaging Data. Human Brain Mapping, 38, 1311-1332.
 
-> Kook, J.H., Vaughn, K.A., DeMaster, D.M., Ewing-Cobbs, L., and Vannucci, M. (2019). BVAR-connect: A Variational Bayes Approach to Multi-Subject Vector Autoregressive Models for Inference on Brain Connectivity Networks. NeuroImage. Submitted. 
+> Kook, J.H., Vaughn, K.A., DeMaster, D.M., Ewing-Cobbs, L., and Vannucci, M. (2020). BVAR-connect: A Variational Bayes Approach to Multi-Subject Vector Autoregressive Models for Inference on Brain Connectivity Networks. Neuroinformatics, to appear. 
 
 
 ## Content and Installation.
 
-The repository contains a BVAR_connect.mlappinstall file which can be installed on both Windows and OS machine. For proper installation, you will need to have MATLAB R2012b or a higher version.
+The repository contains a BVAR_connect.mlappinstall file which can be installed on both Windows and OS machine. For proper installation, you will need to have MATLAB R2012b or a higher version. In the example data folder, one can find Matlab codes to reproduce the simulations performed in the second manuscript, along with a .mat file containing the real fMRI data used for the real data application.
 
 
 ## Example
